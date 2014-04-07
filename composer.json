@@ -1,0 +1,16 @@
+{
+    "name": "mekras/types",
+    "description": "Common data types implementations",
+    "license": "GPL-3",
+    "authors":
+    [
+        {
+            "name": "Михаил Красильников",
+            "email": "m.krasilnikov@yandex.ru"
+        }
+    ],
+    "require":
+    {
+        "php": ">=5.3"
+    }
+}

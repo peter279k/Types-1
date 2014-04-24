@@ -12,6 +12,9 @@ use InvalidArgumentException;
 
 /**
  * E-mail address
+ *
+ * @api
+ * @since 1.00
  */
 class EmailAddress
 {
@@ -35,6 +38,8 @@ class EmailAddress
      * @param string $email string representation of address (e. g. "foo@example.com")
      *
      * @throws InvalidArgumentException
+     *
+     * @since 1.00
      */
     public function __construct($email)
     {
@@ -53,6 +58,8 @@ class EmailAddress
      * Returns username (e. g. "foo" for "foo@example.com")
      *
      * @return string
+     *
+     * @since 1.00
      */
     public function getUsername()
     {
@@ -63,6 +70,8 @@ class EmailAddress
      * Returns domain
      *
      * @return Domain
+     *
+     * @since 1.00
      */
     public function getDomain()
     {
@@ -73,6 +82,8 @@ class EmailAddress
      * String representation
      *
      * @return string
+     *
+     * @since 1.00
      */
     public function __toString()
     {

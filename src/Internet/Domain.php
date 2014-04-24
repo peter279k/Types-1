@@ -12,6 +12,9 @@ use InvalidArgumentException;
 
 /**
  * Domain
+ *
+ * @api
+ * @since 1.00
  */
 class Domain
 {
@@ -42,6 +45,8 @@ class Domain
      * @param string $full domain name (e. g. "foo.bar.com")
      *
      * @throws InvalidArgumentException
+     *
+     * @since 1.00
      */
     public function __construct($full)
     {
@@ -58,6 +63,8 @@ class Domain
      * Returns full domain name (e. g. "foo.bar.com")
      *
      * @return string
+     *
+     * @since 1.00
      */
     public function getFullName()
     {
@@ -68,6 +75,8 @@ class Domain
      * Returns short name (e. g. "foo" for "foo.bar.com").
      *
      * @return string
+     *
+     * @since 1.00
      */
     public function getShortName()
     {
@@ -78,6 +87,8 @@ class Domain
      * Returns domain level (e. g. 3 for "foo.bar.com")
      *
      * @return int
+     *
+     * @since 1.00
      */
     public function getLevel()
     {
@@ -88,6 +99,8 @@ class Domain
      * String representation
      *
      * @return string
+     *
+     * @since 1.00
      */
     public function __toString()
     {

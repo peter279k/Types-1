@@ -1,7 +1,7 @@
 {
     "name": "mekras/types",
     "description": "Common data types implementations",
-    "license": "GPL-3",
+    "license": "MIT",
     "authors":
     [
         {

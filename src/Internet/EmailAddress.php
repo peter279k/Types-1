@@ -51,7 +51,7 @@ class EmailAddress
         }
 
         $this->user = $parts[0];
-        $this->domain = new Domain($parts[2]);
+        $this->domain = new Domain($parts[1]);
     }
 
     /**

@@ -14,7 +14,7 @@ namespace Mekras\Types\DateTime\Traits;
  * This trait should be used in a child classes of DateTime.
  *
  * @api
- * @since x.xx
+ * @since 1.01
  */
 trait DateComingChecks
 {
@@ -23,7 +23,7 @@ trait DateComingChecks
      *
      * @return bool
      *
-     * @since x.xx
+     * @since 1.01
      */
     public function isDateHasCome()
     {
@@ -39,7 +39,7 @@ trait DateComingChecks
      *
      * @link http://php.net/DateInterval
      *
-     * @since x.xx
+     * @since 1.01
      */
     public function isDateWillComeIn($interval)
     {

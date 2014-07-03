@@ -14,7 +14,9 @@ Common data types implementations.
 
 ## Contents
 
+* Date & time types:
+  * Helpers:
+    * Date coming check trait
 * Internet types:
-
-    * Domain name
-    * E-mail address
+  * Domain name
+  * E-mail address

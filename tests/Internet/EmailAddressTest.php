@@ -12,17 +12,27 @@ use Mekras\Types\Internet\EmailAddress;
 
 /**
  * EmailAddress Tests
+ *
+ * @covers Mekras\Types\Internet\EmailAddress
  */
 class EmailAddressTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers Mekras\Types\Internet\EmailAddress
+     *
      */
     public function testBasics()
     {
         $email = new EmailAddress('foo.bar@example.com');
-        $this->assertEquals('foo.bar', $email->getUsername());
-        $this->assertEquals('example.com', strval($email->getDomain()));
-        $this->assertEquals('foo.bar@example.com', strval($email));
+        static::assertEquals('foo.bar', $email->getUsername());
+        static::assertEquals('example.com', strval($email->getDomain()));
+        static::assertEquals('foo.bar@example.com', strval($email));
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testInvalidAddress()
+    {
+        new EmailAddress('foo@bar@example.com');
     }
 }

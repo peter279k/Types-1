@@ -43,12 +43,12 @@ class EmailAddress
      */
     public function __construct($email)
     {
-        $email = strval($email);
-        $parts = explode('@', $email);
-        if (count($parts) != 2)
-        {
-            throw new InvalidArgumentException("\"$email\" is not a valid e-mail address");
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new InvalidArgumentException(sprintf('"%s" is not a valid email', $email));
         }
+
+        $email = strval($email);
+        $parts = explode('@', $email, 2);
 
         $this->user = $parts[0];
         $this->domain = new Domain($parts[1]);

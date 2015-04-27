@@ -50,8 +50,7 @@ class Domain
      */
     public function __construct($full)
     {
-        if (mb_strlen($full, 'UTF-8') < 2)
-        {
+        if (mb_strlen($full, 'UTF-8') < 2) {
             throw new InvalidArgumentException("\"$full\" is not a valid domain name");
         }
         $this->fullName = strval($full);

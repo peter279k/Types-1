@@ -8,13 +8,14 @@
 namespace Mekras\Types\Tests\Internet;
 
 use Mekras\Types\Internet\Domain;
+use PHPUnit_Framework_TestCase as TestCase;
 
 /**
  * Domain Tests
  *
  * @covers Mekras\Types\Internet\Domain
  */
-class DomainTest extends \PHPUnit_Framework_TestCase
+class DomainTest extends TestCase
 {
     /**
      *
@@ -26,5 +27,14 @@ class DomainTest extends \PHPUnit_Framework_TestCase
         static::assertEquals('www.example.com', $domain->getFullName());
         static::assertEquals('www', $domain->getShortName());
         static::assertEquals('www.example.com', strval($domain));
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage "a" is not a valid domain name
+     */
+    public function testInvalidDomain()
+    {
+        new Domain('a');
     }
 }

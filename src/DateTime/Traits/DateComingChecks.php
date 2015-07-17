@@ -1,10 +1,9 @@
 <?php
 /**
- * Date coming checks for DateTime
+ * Common data types implementations
  *
- * @copyright 2014, Михаил Красильников <m.krasilnikov@yandex.ru>
- * @author    Михаил Красильников <m.krasilnikov@yandex.ru>
- * @license   http://opensource.org/licenses/MIT MIT
+ * @author  Михаил Красильников <m.krasilnikov@yandex.ru>
+ * @license http://opensource.org/licenses/MIT MIT
  */
 namespace Mekras\Types\DateTime\Traits;
 

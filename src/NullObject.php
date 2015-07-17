@@ -12,7 +12,7 @@ namespace Mekras\Types;
  *
  * @link  http://martinfowler.com/eaaCatalog/specialCase.html
  *
- * @since x.xx
+ * @since 1.03
  */
 class NullObject
 {
@@ -24,7 +24,7 @@ class NullObject
      *
      * @return $this
      *
-     * @since x.xx
+     * @since 1.03
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameters)
      */
@@ -39,7 +39,7 @@ class NullObject
      * @param string $name
      * @param mixed  $value
      *
-     * @since x.xx
+     * @since 1.03
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameters)
      */
@@ -54,7 +54,7 @@ class NullObject
      *
      * @return $this
      *
-     * @since x.xx
+     * @since 1.03
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameters)
      */
@@ -68,7 +68,7 @@ class NullObject
      *
      * @return string
      *
-     * @since x.xx
+     * @since 1.03
      */
     public function __toString()
     {

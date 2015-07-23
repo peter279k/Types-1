@@ -12,6 +12,8 @@ Common data types implementations.
 * Date & time types:
   * Helpers:
     * Date coming check trait
+* Exceptions:
+    * InvalidArgumentTypeException
 * Internet types:
   * Domain name
   * E-mail address

@@ -19,3 +19,7 @@ Common data types implementations.
   * E-mail address
 * Computed string
 * Null object (for [Special Case pattern](http://martinfowler.com/eaaCatalog/specialCase.html))
+
+Utils:
+
+* Type checker

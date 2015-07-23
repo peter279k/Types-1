@@ -17,4 +17,5 @@ Common data types implementations.
 * Internet types:
   * Domain name
   * E-mail address
+* Computed string
 * Null object (for [Special Case pattern](http://martinfowler.com/eaaCatalog/specialCase.html))

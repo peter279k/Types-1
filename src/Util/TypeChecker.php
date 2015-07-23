@@ -11,7 +11,7 @@ namespace Mekras\Types\Util;
  * Tool for type checking
  *
  * @api
- * @since x.xx
+ * @since 1.04
  */
 class TypeChecker
 {
@@ -35,7 +35,7 @@ class TypeChecker
      *
      * @return bool
      *
-     * @since x.xx
+     * @since 1.04
      */
     public static function isString($value)
     {

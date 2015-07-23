@@ -14,7 +14,7 @@ use InvalidArgumentException;
  * Invalid argument type
  *
  * @api
- * @since x.xx
+ * @since 1.04
  */
 class InvalidArgumentTypeException extends InvalidArgumentException
 {
@@ -41,7 +41,7 @@ class InvalidArgumentTypeException extends InvalidArgumentException
      * @param int       $code     error code
      * @param Exception $previous previous exception
      *
-     * @since x.xx
+     * @since 1.04
      */
     public function __construct(
         $method,

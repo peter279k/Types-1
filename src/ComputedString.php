@@ -19,7 +19,7 @@ use Closure;
  * ```
  *
  * @api
- * @since x.xx
+ * @since 1.04
  */
 class ComputedString
 {
@@ -35,7 +35,7 @@ class ComputedString
      *
      * @param Closure $closure string factory
      *
-     * @since x.xx
+     * @since 1.04
      */
     public function __construct(Closure $closure)
     {
@@ -47,7 +47,7 @@ class ComputedString
      *
      * @return string
      *
-     * @since x.xx
+     * @since 1.04
      */
     public function __toString()
     {

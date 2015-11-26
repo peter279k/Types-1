@@ -31,13 +31,13 @@ class DateComingChecksTest extends \PHPUnit_Framework_TestCase
     public function testIsDateHasCome()
     {
         $time = new DateComingChecksClass('now');
-        $this->assertTrue($time->isDateHasCome(), 'now');
+        static::assertTrue($time->isDateHasCome(), 'now');
 
         $time = new DateComingChecksClass('yesterday');
-        $this->assertTrue($time->isDateHasCome(), 'yesterday');
+        static::assertTrue($time->isDateHasCome(), 'yesterday');
 
         $time = new DateComingChecksClass('tomorrow');
-        $this->assertFalse($time->isDateHasCome(), 'tomorrow');
+        static::assertFalse($time->isDateHasCome(), 'tomorrow');
     }
 
     /**
@@ -48,7 +48,7 @@ class DateComingChecksTest extends \PHPUnit_Framework_TestCase
         $time = new DateComingChecksClass('now');
         $time->add(new \DateInterval('P1W'));
 
-        $this->assertFalse($time->isDateWillComeIn('P5D'), 'P5D');
-        $this->assertTrue($time->isDateWillComeIn('P10D'), 'P10D');
+        static::assertFalse($time->isDateWillComeIn('P5D'), 'P5D');
+        static::assertTrue($time->isDateWillComeIn('P10D'), 'P10D');
     }
 }

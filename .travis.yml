@@ -20,8 +20,8 @@ matrix:
     fast_finish: true
     include:
         -
-            php: 5.5
-            env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" COVERAGE=true PHPUNIT_FLAGS="--coverage-clover build/coverage.xml"
+            php: 5.4
+            env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" COVERAGE=true PHPUNIT_FLAGS="--coverage-clover build/logs/clover.xml"
 
 before_install:
   - travis_retry composer self-update
@@ -33,4 +33,4 @@ script:
   - $TEST_COMMAND
 
 after_success:
-    - php vendor/bin/coveralls -v
+    - if [[ "$COVERAGE" = true ]]; then php vendor/bin/coveralls -v; fi

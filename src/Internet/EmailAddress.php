@@ -7,8 +7,6 @@
  */
 namespace Mekras\Types\Internet;
 
-use InvalidArgumentException;
-
 /**
  * E-mail address
  *
@@ -18,63 +16,60 @@ use InvalidArgumentException;
 class EmailAddress
 {
     /**
-     * User name (address local part)
+     * Mailbox name (address local part)
      *
      * @var string
      */
-    private $user;
+    private $mailbox;
 
     /**
-     * Domain
+     * Domain name
      *
      * @var Domain
      */
     private $domain;
 
     /**
-     * Creates new e-mail address
+     * Display name
      *
-     * @param string $email string representation of address (e. g. "foo@example.com")
+     * @var string|null
+     */
+    private $displayName = null;
+
+    /**
+     * Create new e-mail address.
      *
-     * @throws InvalidArgumentException
+     * @param string      $email       e-mail address (e. g. "Foo <foo@example.com>")
+     * @param string|null $displayName optional display name
      *
+     * @throws \InvalidArgumentException
+     *
+     * @since x.x display name support added
      * @since 1.0
      */
-    public function __construct($email)
+    public function __construct($email, $displayName = null)
     {
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new InvalidArgumentException(sprintf('"%s" is not a valid email', $email));
+        $email = trim($email);
+
+        if (substr($email, -1) === '>'
+            && preg_match('/^(?<display_name>.*\S)?\s*<(?<address>.+)>$/', $email, $matches)
+        ) {
+            $this->displayName = $matches['display_name'];
+            $email = $matches['address'];
+        }
+        if (null !== $displayName) {
+            $this->displayName = $displayName;
         }
 
-        $email = (string) $email;
-        $parts = explode('@', $email, 2);
+        $parts = explode('@', $email);
+        if (count($parts) !== 2) {
+            throw new \InvalidArgumentException(
+                sprintf('"%s" is not a valid e-mail address', $email)
+            );
+        }
 
-        $this->user = $parts[0];
+        $this->mailbox = $parts[0];
         $this->domain = new Domain($parts[1]);
-    }
-
-    /**
-     * Returns username (e. g. "foo" for "foo@example.com")
-     *
-     * @return string
-     *
-     * @since 1.0
-     */
-    public function getUsername()
-    {
-        return $this->user;
-    }
-
-    /**
-     * Returns domain
-     *
-     * @return Domain
-     *
-     * @since 1.0
-     */
-    public function getDomain()
-    {
-        return $this->domain;
     }
 
     /**
@@ -86,6 +81,57 @@ class EmailAddress
      */
     public function __toString()
     {
-        return $this->user . '@' . $this->domain;
+        return $this->mailbox . '@' . $this->domain;
+    }
+
+    /**
+     * Returns mailbox (e. g. "foo" for "foo@example.com")
+     *
+     * @return string
+     *
+     * @since x.x
+     */
+    public function getMailbox()
+    {
+        return $this->mailbox;
+    }
+
+    /**
+     * Return username (e. g. "foo" for "foo@example.com")
+     *
+     * @return string
+     *
+     * @deprecated use {@link getMailbox()}
+     *
+     * @since x.x deprecated
+     * @since 1.0
+     */
+    public function getUsername()
+    {
+        return $this->getMailbox();
+    }
+
+    /**
+     * Return domain
+     *
+     * @return Domain
+     *
+     * @since 1.0
+     */
+    public function getDomain()
+    {
+        return $this->domain;
+    }
+
+    /**
+     * Return display name  (e. g. "Foo" for "Foo <foo@example.com>")
+     *
+     * @return null|string
+     *
+     * @since x.x
+     */
+    public function getDisplayName()
+    {
+        return $this->displayName;
     }
 }

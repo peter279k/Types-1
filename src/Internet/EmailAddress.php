@@ -13,7 +13,7 @@ use InvalidArgumentException;
  * E-mail address
  *
  * @api
- * @since 1.00
+ * @since 1.0
  */
 class EmailAddress
 {
@@ -38,7 +38,7 @@ class EmailAddress
      *
      * @throws InvalidArgumentException
      *
-     * @since 1.00
+     * @since 1.0
      */
     public function __construct($email)
     {
@@ -46,7 +46,7 @@ class EmailAddress
             throw new InvalidArgumentException(sprintf('"%s" is not a valid email', $email));
         }
 
-        $email = strval($email);
+        $email = (string) $email;
         $parts = explode('@', $email, 2);
 
         $this->user = $parts[0];
@@ -58,7 +58,7 @@ class EmailAddress
      *
      * @return string
      *
-     * @since 1.00
+     * @since 1.0
      */
     public function getUsername()
     {
@@ -70,7 +70,7 @@ class EmailAddress
      *
      * @return Domain
      *
-     * @since 1.00
+     * @since 1.0
      */
     public function getDomain()
     {
@@ -82,7 +82,7 @@ class EmailAddress
      *
      * @return string
      *
-     * @since 1.00
+     * @since 1.0
      */
     public function __toString()
     {

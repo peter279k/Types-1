@@ -28,6 +28,11 @@
             "Mekras\\Types\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Mekras\\Types\\\\Tests\\": "tests/"
+        }
+    },
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-ci": "vendor/bin/phpunit --coverage-clover build/coverage.xml"

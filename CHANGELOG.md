@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## 1.6
+
 ### Changed
 
 - Change minimum PHP version from 5.4 to 5.5.

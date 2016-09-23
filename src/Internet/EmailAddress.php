@@ -1,6 +1,6 @@
 <?php
 /**
- * Common data types implementations
+ * Common data types implementations.
  *
  * @author  Михаил Красильников <m.krasilnikov@yandex.ru>
  * @license http://opensource.org/licenses/MIT MIT
@@ -8,7 +8,7 @@
 namespace Mekras\Types\Internet;
 
 /**
- * E-mail address
+ * E-mail address.
  *
  * @api
  * @since 1.0
@@ -16,38 +16,39 @@ namespace Mekras\Types\Internet;
 class EmailAddress
 {
     /**
-     * Mailbox name (address local part)
+     * Mailbox name (address local part).
      *
      * @var string
      */
     private $mailbox;
 
     /**
-     * Domain name
+     * Domain name.
      *
      * @var Domain
      */
     private $domain;
 
     /**
-     * Display name
+     * Display name.
      *
-     * @var string|null
+     * @var string
      */
-    private $displayName = null;
+    private $displayName = '';
 
     /**
      * Create new e-mail address.
      *
-     * @param string      $email       e-mail address (e. g. "Foo <foo@example.com>")
-     * @param string|null $displayName optional display name
+     * @param string $email       E-mail address (e. g. "Foo <foo@example.com>").
+     * @param string $displayName Optional display name.
      *
      * @throws \InvalidArgumentException
      *
-     * @since x.x display name support added
+     * @since 1.6 Display name can not be null.
+     * @since 1.5 Display name support added.
      * @since 1.0
      */
-    public function __construct($email, $displayName = null)
+    public function __construct($email, $displayName = '')
     {
         $email = trim($email);
 
@@ -57,7 +58,8 @@ class EmailAddress
             $this->displayName = $matches['display_name'];
             $email = $matches['address'];
         }
-        if (null !== $displayName) {
+
+        if ('' !== $displayName) {
             $this->displayName = $displayName;
         }
 
@@ -73,7 +75,7 @@ class EmailAddress
     }
 
     /**
-     * String representation
+     * String representation.
      *
      * @return string
      *
@@ -85,11 +87,11 @@ class EmailAddress
     }
 
     /**
-     * Returns mailbox (e. g. "foo" for "foo@example.com")
+     * Returns mailbox (e. g. "foo" for "foo@example.com").
      *
      * @return string
      *
-     * @since x.x
+     * @since 1.5
      */
     public function getMailbox()
     {
@@ -97,14 +99,14 @@ class EmailAddress
     }
 
     /**
-     * Return username (e. g. "foo" for "foo@example.com")
+     * Return username (e. g. "foo" for "foo@example.com").
      *
      * @return string
      *
-     * @deprecated use {@link getMailbox()}
+     * @deprecated use {@see getMailbox()}
      *
-     * @since x.x deprecated
-     * @since 1.0
+     * @since      1.5 Deprecated.
+     * @since      1.0
      */
     public function getUsername()
     {
@@ -112,7 +114,7 @@ class EmailAddress
     }
 
     /**
-     * Return domain
+     * Return domain.
      *
      * @return Domain
      *
@@ -124,11 +126,12 @@ class EmailAddress
     }
 
     /**
-     * Return display name  (e. g. "Foo" for "Foo <foo@example.com>")
+     * Return display name  (e. g. "Foo" for "Foo <foo@example.com>").
      *
-     * @return null|string
+     * @return string
      *
-     * @since x.x
+     * @since 1.6 Never returns null.
+     * @since 1.5
      */
     public function getDisplayName()
     {

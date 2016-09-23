@@ -1,6 +1,6 @@
 <?php
 /**
- * Common data types implementations
+ * Common data types implementations.
  *
  * @author  Михаил Красильников <m.krasilnikov@yandex.ru>
  * @license http://opensource.org/licenses/MIT MIT
@@ -10,14 +10,14 @@ namespace Mekras\Types\Tests\Internet;
 use Mekras\Types\Internet\EmailAddress;
 
 /**
- * EmailAddress Tests
+ * EmailAddress Tests.
  *
- * @covers Mekras\Types\Internet\EmailAddress
+ * @covers \Mekras\Types\Internet\EmailAddress
  */
 class EmailAddressTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Test basic functions
+     * Test basic functions.
      */
     public function testBasics()
     {
@@ -44,7 +44,7 @@ class EmailAddressTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests for display name
+     * Tests for display name.
      */
     public function testDisplayName()
     {
@@ -65,7 +65,7 @@ class EmailAddressTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test obsolete functions
+     * Test obsolete functions.
      */
     public function testObsolete()
     {

@@ -8,7 +8,7 @@
 namespace Mekras\Types\Tests\Exception;
 
 use Mekras\Types\Exception\InvalidArgumentTypeException;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase as TestCase;
 
 /**
  * Tests for Mekras\Types\Exception\InvalidArgumentTypeException

@@ -8,6 +8,7 @@
 namespace Mekras\Types\Tests\DateTime\Traits;
 
 use Mekras\Types\DateTime\Traits\DateComingChecks;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test implementation
@@ -23,7 +24,7 @@ class DateComingChecksClass extends \DateTime
  *
  * @covers Mekras\Types\DateTime\Traits\DateComingChecks
  */
-class DateComingChecksTest extends \PHPUnit_Framework_TestCase
+class DateComingChecksTest extends TestCase
 {
     /**
      * Check isDateHasCome method

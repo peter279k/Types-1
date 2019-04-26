@@ -8,7 +8,7 @@
 namespace Mekras\Types\Tests\Util;
 
 use Mekras\Types\Util\TypeChecker;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Tests for Mekras\Types\Util\TypeChecker

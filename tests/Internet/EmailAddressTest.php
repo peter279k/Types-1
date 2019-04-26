@@ -8,13 +8,14 @@
 namespace Mekras\Types\Tests\Internet;
 
 use Mekras\Types\Internet\EmailAddress;
+use PHPUnit\Framework\TestCase;
 
 /**
  * EmailAddress Tests.
  *
  * @covers \Mekras\Types\Internet\EmailAddress
  */
-class EmailAddressTest extends \PHPUnit_Framework_TestCase
+class EmailAddressTest extends TestCase
 {
     /**
      * Test basic functions.
@@ -28,18 +29,28 @@ class EmailAddressTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     *
      */
     public function testInvalidAddressNoAt()
     {
-        new EmailAddress('example.com');
+        $invalidEmailAddress = 'example.com';
+
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(sprintf('"%s" is not a valid e-mail address', $invalidEmailAddress));
+
+        new EmailAddress($invalidEmailAddress);
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     *
      */
     public function testInvalidAddressTooManyAts()
     {
+        $invalidEmailAddress = 'foo@bar@example.com';
+
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(sprintf('"%s" is not a valid e-mail address', $invalidEmailAddress));
+
         new EmailAddress('foo@bar@example.com');
     }
 

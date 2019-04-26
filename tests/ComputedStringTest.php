@@ -8,7 +8,7 @@
 namespace Mekras\Types\Tests;
 
 use Mekras\Types\ComputedString;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Tests for Mekras\Types\ComputedString

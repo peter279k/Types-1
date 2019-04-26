@@ -8,7 +8,7 @@
 namespace Mekras\Types\Tests;
 
 use Mekras\Types\NullObject;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Tests for NullObject

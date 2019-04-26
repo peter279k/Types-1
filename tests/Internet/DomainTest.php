@@ -8,7 +8,7 @@
 namespace Mekras\Types\Tests\Internet;
 
 use Mekras\Types\Internet\Domain;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Domain Tests
@@ -30,11 +30,13 @@ class DomainTest extends TestCase
     }
 
     /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage "a" is not a valid domain name
+     *
      */
     public function testInvalidDomain()
     {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('"a" is not a valid domain name');
+
         new Domain('a');
     }
 }
